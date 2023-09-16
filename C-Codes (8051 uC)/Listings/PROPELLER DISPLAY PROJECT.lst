@@ -1,0 +1,137 @@
+C51 COMPILER V9.59.0.0   PROPELLER_DISPLAY_PROJECT                                         07/28/2018 12:05:16 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE PROPELLER_DISPLAY_PROJECT
+OBJECT MODULE PLACED IN .\Objects\PROPELLER DISPLAY PROJECT.obj
+COMPILER INVOKED BY: D:\SOFTWARES\INSTALLED SOFTWARES\Keil_v5\C51\BIN\C51.EXE PROPELLER DISPLAY PROJECT.C OPTIMIZE(8,SPE
+                    -ED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\PROPELLER DISPLAY PROJECT.lst) TABS(2) OBJECT(.\Objects\PROPELLER DISPLAY
+                    - PROJECT.obj)
+
+line level    source
+
+   1          /*
+   2          We generated the look up table for the ASCII in CHARACTER.h Header File.
+   3          The Display works using interrupts and timers.
+   4                          ALGORITHEM
+   5                  
+   6                  STEP 1: Measure Time per Revolution.
+   7                  STEP 2: Calculates Time Per Pixel. (Pixel Means a Single Column).
+   8                  STEP 3: Calculates Delay per Pixel.
+   9                  STEP 4: Outputs the Respective Code For a respective Graphics (Character).
+  10                  STEP 5: Calls Delay per Pixel.
+  11                  STEP 6: Repeats STEP 4 & STEP 5 ,Untill all the codes are outputed for a respective Character.
+  12                  STEP 7: Repeats STEP 4 to STEP 6 ,Untill all the characters are Displayed.        
+  13                  Step 8: Repeat STEP 1 to STEP 8: 
+  14          */
+  15          
+  16          #include<reg52.h>
+  17          #include "INITIALIZESYSTEM.h"
+  18          #include "SERIALRECIVE.h"
+  19          #include "DISPLAYY.h"
+  20          #define wait 50
+  21            
+  22          void main()
+  23          {
+  24   1        int i=0;
+  25   1        initialize_system();        
+  26   1      
+  27   1        while(1)
+  28   1        {for(i=0;i<wait;i++)
+  29   2          {
+  30   3            calculate_time_per_pixel();
+  31   3            display("PROPELLER DISPLAY");   //MAXIMUM 18 CHARACTERS.serial_recive[]
+  32   3          }
+  33   2          i=0;
+  34   2      
+  35   2          for(i=0;i<wait;i++)
+  36   2          {
+  37   3            calculate_time_per_pixel();
+  38   3            display("MADE BY");   //MAXIMUM 18 CHARACTERS.serial_recive[]
+  39   3          }
+  40   2          i=0;
+  41   2      /*
+  42   2          for(i=0;i<wait;i++)
+  43   2          {
+  44   2            calculate_time_per_pixel();
+  45   2            display("DURRENAJAF");    //MAXIMUM 18 CHARACTERS.serial_recive[]
+  46   2          }
+  47   2          i=0;
+  48   2      
+  49   2          for(i=0;i<wait;i++)
+  50   2          {
+  51   2            calculate_time_per_pixel();
+  52   2            display("ASHFAQ AHMAD");    //MAXIMUM 18 CHARACTERS.serial_recive[]
+  53   2          }
+C51 COMPILER V9.59.0.0   PROPELLER_DISPLAY_PROJECT                                         07/28/2018 12:05:16 PAGE 2   
+
+  54   2          i=0;
+  55   2      
+  56   2          for(i=0;i<wait;i++)
+  57   2          {
+  58   2            calculate_time_per_pixel();
+  59   2            display("M QAISAR ALI");    //MAXIMUM 18 CHARACTERS.serial_recive[]
+  60   2          }
+  61   2          i=0;
+  62   2      
+  63   2          for(i=0;i<wait;i++)
+  64   2          {
+  65   2            calculate_time_per_pixel();
+  66   2            display("M QAISAR ALI");    //MAXIMUM 18 CHARACTERS.serial_recive[]
+  67   2          }
+  68   2          i=0;
+  69   2      
+  70   2          for(i=0;i<wait;i++)
+  71   2          {
+  72   2            calculate_time_per_pixel();
+  73   2            display("SUBMITTED TO");    //MAXIMUM 18 CHARACTERS.serial_recive[]
+  74   2          }
+  75   2          i=0;
+  76   2      
+  77   2          for(i=0;i<wait;i++)
+  78   2          {
+  79   2            calculate_time_per_pixel();
+  80   2            display("SIR GUL MUHAMMAD");    //MAXIMUM 18 CHARACTERS.serial_recive[]
+  81   2          }
+  82   2          i=0;
+  83   2          
+  84   2          for(i=0;i<wait;i++)
+  85   2          {
+  86   2            calculate_time_per_pixel();
+  87   2            display("AND");   //MAXIMUM 18 CHARACTERS.serial_recive[]
+  88   2          }
+  89   2          i=0;
+  90   2      
+  91   2          for(i=0;i<wait;i++)
+  92   2          {
+  93   2            calculate_time_per_pixel();
+  94   2            display("SIR NASAR JAMAL");   //MAXIMUM 18 CHARACTERS.serial_recive[]
+  95   2          }
+  96   2          i=0;
+  97   2      
+  98   2          for(i=0;i<wait;i++)
+  99   2          {
+ 100   2            calculate_time_per_pixel();
+ 101   2            display("THANK YOU");   //MAXIMUM 18 CHARACTERS.serial_recive[]
+ 102   2          }
+ 103   2          i=0;
+ 104   2          
+ 105   2      */
+ 106   2        }
+ 107   1        
+ 108   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   1620    ----
+   CONSTANT SIZE    =    344    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+C51 COMPILER V9.59.0.0   PROPELLER_DISPLAY_PROJECT                                         07/28/2018 12:05:16 PAGE 3   
+
+   DATA SIZE        =     25       9
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      1    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
